@@ -1,0 +1,21 @@
+{
+  "name": "meteor-yelp-clone",
+  "private": true,
+  "scripts": {
+    "start:dev": "meteor run --settings=settings/development.json",
+    "test": "meteor test --once --driver-package dispatch:mocha-phantomjs --port 3030",
+    "test:watch": "meteor test --settings=settings/test.json --driver-package=practicalmeteor:mocha --port 3030"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "underscore.string": "^3.3.4",
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "mongodb": "^2.2.25",
+    "monk": "^4.0.0",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
+  }
+}

@@ -1,0 +1,14 @@
+<template name="home">
+  <div class="pure-g">
+    <div class="pure-u-1-3">
+      {{> Menu menuItems=menuItems}}
+    </div>
+    <div class="pure-u-2-3">
+      {{#if placeSelected}}
+        {{> PlaceDetail place=placeSelected}}
+      {{else}}
+        {{> Map center=mapCenter zoom=defaultZoom query=query onPlacesChanged=placesChanged}}
+      {{/if}}
+    </div>
+  </div>
+</template>

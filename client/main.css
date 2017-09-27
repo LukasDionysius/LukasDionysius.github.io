@@ -1,0 +1,50 @@
+header {
+  position: fixed;
+  height: 42px;
+  width: 100%;
+  background-color: #1f8dd6;
+  z-index: 2;
+}
+
+main {
+  padding-top: 42px;
+}
+
+.app-title {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.app-menu {
+  height: calc(100vh - 42px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.app-menu .menu-item {
+  white-space: normal;
+}
+
+.align-right {
+  float: right;
+}
+
+.rating {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.place-detail {
+  padding: 0 15px;
+}
+
+.price-level {
+  font-size: 14px;
+  color: #1f8dd6;
+}
+
+.map-container {
+  height: calc(100vh - 42px);
+  max-width: 100%;
+}
