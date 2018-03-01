@@ -61,6 +61,14 @@
       getVillanovaWeather();
       var myVar = setInterval(function(){ updateTime() }, 1000);
       var myVar = setInterval(function(){ updateDate() }, 1000000);
+      
+      $(document).ready(function(){
+        $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Villanova&APPID=45b358559502836c3c3b11aff339a647", function(result){
+        console.log(result);
+            });
+        });
+    });
+});
 
       
     </script>
