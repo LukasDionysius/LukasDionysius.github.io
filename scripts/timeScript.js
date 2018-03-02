@@ -145,15 +145,3 @@ function updateTime() {
     var time = getFullTime()
     document.getElementById("currentTime").innerHTML = time;
 }
-
-function getVillanovaWeather(){
-	var url = "api.openweathermap.org/data/2.5/weather?q=Villanova&APPID=45b358559502836c3c3b11aff339a647";
-	$.getJSON(url, function(data) {
-		var weather = data;
-
-		console.log(weather);
-
-		document.getElementById("villanovaWeather").innerHTML = weather;
-		$(".mypanel").html(text);
-	});
-}
