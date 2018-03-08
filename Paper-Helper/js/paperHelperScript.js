@@ -8,6 +8,7 @@ function saveQuestion1(){
 function updateQuestionHeader(){
 	var question = sessionStorage.getItem('question1');
 	document.getElementById("question").innerHTML = question;
+	console.log(question);
 }
 
 
