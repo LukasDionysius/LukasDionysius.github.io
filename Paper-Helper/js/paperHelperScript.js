@@ -6,7 +6,7 @@ function saveQuestion1(){
 }
 
 function test(){
-	var question = localStorage.getItem("question1");
+	var question = localStorage.getItem('question1');
 	//document.getElementById("question").innerHTML = question;
 	console.log(question);
 }
