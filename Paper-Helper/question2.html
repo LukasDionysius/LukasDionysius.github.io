@@ -35,9 +35,12 @@
       </div>
     </nav>
 
-    <br><br><br><br><br><br>
-    <h1>question 2</h1>
-    <h3>question</h3>
+    <br><br><br><br><br><h4>
+      <h3><div id="question"></div></h3> 
+    <br>
+
+    <h3>question 2</h3>
+    <h1>question</h1>
     <br>
 
     <div class="wrapper">
@@ -75,6 +78,10 @@
           h.style.height = "20px";
           h.style.height = (h.scrollHeight)+"px";
       }
+
+      $(document).ready(function() {
+          updateQuestionHeader()
+      });
     </script>
   </body>
 </html>

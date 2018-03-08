@@ -1,17 +1,22 @@
-var q1;
-var q2;
-
 function saveQuestion1(){
-	q1 = document.getElementById("field1").value;
+	var q1 = document.getElementById("field1").value;
 	localStorage.setItem('question1', q1);
+	var question = sessionStorage.getItem('question1');
+	console.log(question);
 }
 
+function updateQuestionHeader(){
+	var question = sessionStorage.getItem('question1');
+	document.getElementById("question").innerHTML = question;
+}
+
+
 function saveQuestion2(){
-	q2 = document.getElementById("field2").value;
+	var q2 = document.getElementById("field2").value;
 	localStorage.setItem('question2', q2);
 }
 
 function saveQuestion3(){
-	q3 = document.getElementById("field2").value;
+	var q3 = document.getElementById("field2").value;
 	localStorage.setItem('question3', q3);
 }
