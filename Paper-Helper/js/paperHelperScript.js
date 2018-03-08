@@ -1,13 +1,13 @@
 function saveQuestion1(){
 	var q1 = document.getElementById("field1").value;
 	localStorage.setItem('question1', q1);
-	var question = sessionStorage.getItem('question1');
+	var question = sessionStorage.getItem(question1);
 	console.log(question);
 }
 
-function updateQuestionHeader(){
-	var question = sessionStorage.getItem('question1');
-	document.getElementById("question").innerHTML = question;
+function test(){
+	var question = sessionStorage.getItem("question1");
+	//document.getElementById("question").innerHTML = question;
 	console.log(question);
 }
 
