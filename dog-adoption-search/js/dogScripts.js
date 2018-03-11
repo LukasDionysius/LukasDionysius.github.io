@@ -15,10 +15,22 @@ function searchBreed(){
 	console.log(breed);
 	localStorage.setItem('breed', breed);
 
+
 	var url = "http://api.petfinder.com/pet.find?key=46a965a0430182134febba4583a36039&animal=dog&breed=" + breed + "&location=10976&format=json";
 	var dogInfo;
-
+	
+	/*
+	var dogInfo;
 	$.getJSON(url, function(data) {
+	*/
+
+	$.ajax({
+		crossOrigin: true,
+		url : url,
+		type : "GET",
+		success:function(data){
+		console.log(data);
+
 
 		var petfinder = data.petfinder;
 		var pets = petfinder.pets;
@@ -116,6 +128,8 @@ function searchBreed(){
 
 		}
 		document.getElementById("fullDogList").innerHTML = petList;
+	}
+
 	});
 }
 
