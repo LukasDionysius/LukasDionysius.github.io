@@ -44,25 +44,16 @@ function searchBreed(){
 
     		// Photo
     		var pht;
-    		while (pet[i]["media"]["photos"]["photo"] != undefined){
-    			pht = pet[i]["media"]["photos"]["photo"];
-    		}
     		var photo;
-    		if (pht != undefined){
-    			photo = pet[i]["media"]["photos"]["photo"];
-    			console.log(photo);
-    		} else {
-    			photo = "No picture available";
-    		}
-    		console.log(photo);
+    		var mediaArray = pet[i]["media"];
+    		console.log("keys: " + Object.keys(mediaArray));
 
-    		/* 
-    		if (pet[i]["media"]["photos"] != undefined){
-    			 photo = pet[i]["media"]["photos"]["photo"][0]["$t"];
+    		if (Object.keys(mediaArray) == "photos"){
+    			pht = pet[i]["media"]["photos"]["photo"][0]["$t"];
     		} else {
-    			var photo = "No picture available";
+    			pht = "";
     		}
-    		*/
+    		photo = "<img src=\"" + pht + "alt=\"No Picture Available\" width=\"120\" height=\"120\">";
 
     		// Size
     		var sz = pet[i]["size"]["$t"];
@@ -115,7 +106,7 @@ function searchBreed(){
 
 
 
-    		dogInfo = "<strong>There is a " + age + ", " + sex + " " + breed + " named " + name + " in " + city + ". <br></strong>" + description + photo + "<br><br><strong> Contact: </strong><br>" + "Phone: " + phone + "<br> Email: " + email + "<br> ______________________ <br>";
+    		dogInfo = "<strong>There is a " + age + ", " + sex + " " + breed + " named " + name + " in " + city + ". <br></strong>" + description + "<br><br>" + photo + "<br><br><strong> Contact: </strong><br>" + "Phone: " + phone + "<br> Email: " + email + "<br> ______________________ <br>";
 
     		if (i == 0){
     			petList = "&#8226;" + " " + dogInfo + "<br><br>";
