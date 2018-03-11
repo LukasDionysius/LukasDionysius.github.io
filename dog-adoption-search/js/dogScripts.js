@@ -6,7 +6,7 @@ a9d69dbcd7f48d6e3567a7547b9fff22
 */
 
 /*
-http://api.petfinder.com/pet.find?key=46a965a0430182134febba4583a36039&animal=dog&location=10976&format=json
+https://api.petfinder.com/pet.find?key=46a965a0430182134febba4583a36039&animal=dog&location=10976&format=json
 */
 
 
