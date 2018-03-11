@@ -15,8 +15,7 @@ function searchBreed(){
 	console.log(breed);
 	localStorage.setItem('breed', breed);
 
-	//var url = "http://api.petfinder.com/pet.find?key=46a965a0430182134febba4583a36039&animal=dog&breed=" + breed + "&location=10976&format=json";
-	var url = "http://api.petfinder.com/pet.find?key=46a965a0430182134febba4583a36039&animal=dog&breed=Chihuahua&location=10976&format=json";
+	var url = "http://api.petfinder.com/pet.find?key=46a965a0430182134febba4583a36039&animal=dog&breed=" + breed + "&location=10976&format=json";
 	var dogInfo;
 
 	$.getJSON(url, function(data) {
@@ -44,11 +43,26 @@ function searchBreed(){
     		}
 
     		// Photo
+    		var pht;
+    		while (pet[i]["media"]["photos"]["photo"] != undefined){
+    			pht = pet[i]["media"]["photos"]["photo"];
+    		}
+    		var photo;
+    		if (pht != undefined){
+    			photo = pet[i]["media"]["photos"]["photo"];
+    			console.log(photo);
+    		} else {
+    			photo = "No picture available";
+    		}
+    		console.log(photo);
+
+    		/* 
     		if (pet[i]["media"]["photos"] != undefined){
-    			var photo = pet[i]["media"]["photos"]["photo"][0]["$t"];
+    			 photo = pet[i]["media"]["photos"]["photo"][0]["$t"];
     		} else {
     			var photo = "No picture available";
     		}
+    		*/
 
     		// Size
     		var sz = pet[i]["size"]["$t"];
@@ -101,7 +115,7 @@ function searchBreed(){
 
 
 
-    		dogInfo = "<strong>There is a " + age + ", " + sex + " " + breed + " named " + name + " in " + city + ". <br></strong>" + description + "<br><br><strong> Contact: </strong><br>" + "Phone: " + phone + "<br> Email: " + email + "<br> ______________________ <br>";
+    		dogInfo = "<strong>There is a " + age + ", " + sex + " " + breed + " named " + name + " in " + city + ". <br></strong>" + description + photo + "<br><br><strong> Contact: </strong><br>" + "Phone: " + phone + "<br> Email: " + email + "<br> ______________________ <br>";
 
     		if (i == 0){
     			petList = "&#8226;" + " " + dogInfo + "<br><br>";
