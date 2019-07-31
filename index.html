@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dashboard - Dark Style</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/styles.css">
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="assets/stocksScript.js"></script>
+	<script type="text/javascript" src="assets/timeScript.js"></script>
+	<script type="text/javascript" src="assets/newsScript.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+
+</head>
+
+<body>
+
+
+	<div id="wrapper">
+
+		<div class="content-area">
+			<div class="container-fluid">
+				<div class="main">
+
+					<div class="row sparkboxes mt-4">
+						<div class="col-md-3">
+							<div class="details">
+								<h1 style="font-weight: bold; color: white" id="currentTime"> </h1>
+								<h6 id="currentDate"></h6>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="box box2">
+									<div class="details">
+										<h2>DJIA</h2>
+										<h4></h4>
+									</div>
+								<div style="text-align: center; font-weight: bold;" id="spark2"></div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="box box3">
+									<div class="details">
+										<h2>AAPL</h2>
+										<h4></h4>
+									</div>
+								<div style="text-align: center; font-weight: bold;" id="spark3"></div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="box box4">
+								<div class="details">
+									<h2>BTC</h2>
+									<h4></h4>
+								</div>
+								<div style="text-align: center; font-weight: bold;" id="spark4"></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row mt-4">
+						<div class="col-md-5">
+								<div class="box shadow mt-4">
+									<div style="font-weight: bolder; font-size: 20px;"> Top News </div>
+									<div id="topleftquad"> </div>
+								</div>
+						</div>
+						<div class="col-md-7">
+							<div class="box shadow mt-4">
+								<div style="font-weight: bolder; font-size: 20px;"> Apple News </div>
+								<div id="toprightquad" class=""> </div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row mt-4">
+						<div class="col-md-5">
+							<div class="box shadow mt-4">
+								<div style="font-weight: bolder; font-size: 20px;">  </div>
+								<div id="botleftquad"></div>
+							</div>
+						</div>
+
+						<div class="col-md-7">
+							<div class="box shadow mt-4">
+								<div style="font-weight: bolder; font-size: 20px;">  </div>
+								<div id="botrightquad"></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	</div>
+
+	<!-- Begin Scriping -->
+	<script>
+
+		getDJIAPrice();
+		getAAPLPrice();
+		getBTCPrice();
+
+		updateTime();
+		updateDate();
+
+		getTopNewsHeadlines();
+		getAppleNewsHeadlines();
+
+		var myVar = setInterval(function(){ getDJIAPrice() }, 4000000); 
+		var myVar = setInterval(function(){ getAAPLPrice() }, 4000000); // Update every 1 hour
+		var myVar = setInterval(function(){ getBTCPrice() }, 4000000); 
+
+		var myVar = setInterval(function(){ getTopNewsHeadlines() }, 2000000); 
+		var myVar = setInterval(function(){ getAppleNewsHeadlines() }, 2000000); 
+
+		var myVar = setInterval(function(){ updateTime() }, 1000); // Update every second
+      	var myVar = setInterval(function(){ updateDate() }, 1000000);
+
+	</script>
+
+</body>
+
+</html>
+
